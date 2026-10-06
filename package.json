@@ -1,0 +1,26 @@
+{
+  "name": "darts501-backend",
+  "version": "1.0.0",
+  "description": "本地飞镖 501 双倍结束 / 爆分回合回放后端（API + CLI）",
+  "type": "module",
+  "main": "dist/server.js",
+  "bin": {
+    "darts501": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node --test --experimental-sqlite --no-warnings \"dist/tests/*.test.js\"",
+    "start": "node --experimental-sqlite --no-warnings dist/server.js",
+    "demo": "node --experimental-sqlite --no-warnings dist/demo.js",
+    "cli": "node --experimental-sqlite --no-warnings dist/cli.js",
+    "replay": "node --experimental-sqlite --no-warnings dist/cli.js replay"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2"
+  }
+}
